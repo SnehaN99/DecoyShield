@@ -1,0 +1,5 @@
+PyQt5==5.15.11
+PyQtWebEngine==5.15.7
+folium==0.20.0
+matplotlib==3.10.8
+requests==2.32.5

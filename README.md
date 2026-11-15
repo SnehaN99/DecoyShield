@@ -38,12 +38,15 @@ The project focuses on:
 | Category | Technologies |
 |---|---|
 | Programming Language | Python |
-| Web Dashboard | Streamlit |
+| Web Dashboard | PyQt5 |
 | Database | SQLite |
-| Networking | Socket Programming |
+| Data Visualization | Matplotlib | 
+| Attack Map Visualization | Folium |
+| Networking | Python Socket Programming |
 | Network Testing | Nmap, Netcat |
 | Threat Intelligence | AbuseIPDB API |
-| Email Notifications | SMTP |
+| Notifications | SMTP Email Alerts |
+| Platform | Windows |
 
 ## 🏗️ System Architecture
 

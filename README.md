@@ -1,4 +1,5 @@
 # 🛡️ DecoyShield
+
 ### A Deception-Based Framework for Proactive Threat Detection and Cyber Defense
 
 DecoyShield is a Python-based cybersecurity project that explores **honeypot technology and cyber deception** to monitor suspicious network activity, collect attack-related information, and analyze potential attacker behavior in a controlled environment.
@@ -26,21 +27,22 @@ The project focuses on:
 - **Behavioral Analysis:** Examines connection patterns and suspicious network activity.
 - **Threat Classification:** Uses risk scoring to categorize suspicious activity into LOW, MEDIUM, and HIGH levels.
 - **Adaptive Deception:** Explores simulated service responses and controlled interactive environments.
-- **Threat Intelligence Integration:** Integrates AbuseIPDB to retrieve IP reputation information, including abuse confidence scores and report counts.
-- **Attack Logging:** Uses SQLite for storing attack-related information.
-- **Email Alerts:** Supports email notifications for security events.
-- **Web Dashboard:** Provides a graphical interface for monitoring attack activity and displaying security information.
+- **Threat Intelligence Integration:** Supports AbuseIPDB-based IP reputation enrichment when a valid API key is configured.
+- **Attack Logging:** Uses SQLite to store attack-related information.
+- **Email Alerts:** Supports email notifications for security events using environment-based configuration.
+- **Desktop Dashboard:** Provides a PyQt5 graphical interface for monitoring attack activity and displaying security information.
+- **Attack Map Visualization:** Uses Folium to visualize honeypot and attack-source locations based on available geographic information.
 
-*Note: Features described in the proposed framework and research documentation may differ from the functionality implemented in individual project versions.*
+*Note: Features described in the proposed framework and research documentation may differ from the functionality implemented in individual project versions. Some integrations require additional configuration.*
 
 ## 🧰 Technologies Used
 
 | Category | Technologies |
 |---|---|
 | Programming Language | Python |
-| Web Dashboard | PyQt5 |
+| Desktop GUI | PyQt5 |
 | Database | SQLite |
-| Data Visualization | Matplotlib | 
+| Data Visualization | Matplotlib |
 | Attack Map Visualization | Folium |
 | Networking | Python Socket Programming |
 | Network Testing | Nmap, Netcat |
@@ -57,22 +59,24 @@ The proposed DecoyShield framework consists of six major layers:
 3. **Analytics and Decision Engine** – Analyzes activity and calculates risk scores.
 4. **Deception Layer** – Provides simulated services and controlled interactions.
 5. **Storage and Alerting Layer** – Maintains attack records and security notifications.
-6. **User Interface Layer** – Presents monitoring information through the web dashboard.
+6. **User Interface Layer** – Presents monitoring information through the PyQt5 desktop dashboard.
 
 ## 🔍 Threat Intelligence and Risk Scoring
 
-DecoyShield integrates AbuseIPDB to enrich suspicious IP addresses with external reputation information.
+DecoyShield supports AbuseIPDB integration to enrich suspicious IP addresses with external reputation information.
 
-The integration retrieves:
+The integration can retrieve:
 
 - Abuse confidence score
 - Total reported incidents
 
-A custom risk-scoring mechanism considers reputation information, observed behavior, and VPN/proxy indicators to calculate a risk score.
+A custom risk-scoring mechanism considers reputation information and observed behavior to calculate a risk score.
+
+The AbuseIPDB integration requires an API key supplied through the `ABUSEIPDB_API_KEY` environment variable. API access is not available when the key is missing.
 
 ## 🧪 Testing and Evaluation
 
-The project research documentation describes testing through controlled scenarios, including:
+The project is evaluated through controlled testing scenarios, including:
 
 - Network port scanning using Nmap
 - Service probing
@@ -81,14 +85,44 @@ The project research documentation describes testing through controlled scenario
 
 These scenarios help evaluate the system's ability to observe suspicious network activity and analyze attacker interactions.
 
-
 ## 📸 Dashboard Screenshots
 
 ### 1. Live Threat Dashboard
+
 ![Live Threat Dashboard](screenshots/live-threat-dashboard.png)
 
 ### 2. Dashboard Overview
+
 ![Dashboard Overview](screenshots/dashboard-overview.png)
+
+## 📁 Repository Structure
+
+```text
+DecoyShield/
+│
+├── src/
+│   ├── main.py
+│   ├── gui_dashboard.py
+│   ├── dashboard.py
+│   ├── background_monitor.py
+│   ├── database.py
+│   ├── ports.py
+│   ├── alerts.py
+│   ├── attacker_profile.py
+│   ├── behavior_engine.py
+│   ├── intel_engine.py
+│   ├── intent_engine.py
+│   ├── threat_intel.py
+│   ├── icon.ico
+│   └── icon.png
+│
+├── screenshots/
+│   ├── live-threat-dashboard.png
+│   └── dashboard-overview.png
+│
+├── .gitignore
+└── README.md
+```
 
 ## 🚀 Future Enhancements
 

@@ -78,9 +78,14 @@ The project research documentation describes testing through controlled scenario
 
 These scenarios help evaluate the system's ability to observe suspicious network activity and analyze attacker interactions.
 
-## 📸 Screenshots
 
-Screenshots of the DecoyShield web dashboard and its features will be added here.
+## 📸 Dashboard Screenshots
+
+### 1. Live Threat Dashboard
+![Live Threat Dashboard](screenshots/live-threat-dashboard.png)
+
+### 2. Dashboard Overview
+![Dashboard Overview](screenshots/dashboard-overview.png)
 
 ## 🚀 Future Enhancements
 
